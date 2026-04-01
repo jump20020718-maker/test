@@ -5,6 +5,13 @@ import { createApp } from '../src/app';
 const app = createApp();
 
 describe('api endpoints', () => {
+
+  it('GET / serves chat page', async () => {
+    const r = await request(app).get('/');
+    expect(r.status).toBe(200);
+    expect(r.text).toContain('AI 客服 Agent');
+  });
+
   it('POST /api/chat', async () => {
     const r = await request(app).post('/api/chat').send({ message: '订单号ORD1001清关状态' });
     expect(r.status).toBe(200);

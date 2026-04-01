@@ -40,6 +40,20 @@ npm start
 
 默认端口：`3000`
 
+
+## 聊天演示页面
+
+启动服务后可直接访问：
+
+- `http://localhost:3000/`
+
+页面提供：
+- 聊天消息列表
+- 输入框
+- 发送按钮
+
+发送后会调用后端 `POST /api/chat`，并展示 `answer`（以及 `intent` / `usedTools` / `confidence`）。
+
 ## 测试
 
 ```bash
