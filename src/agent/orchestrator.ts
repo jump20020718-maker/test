@@ -17,8 +17,7 @@ function extractOrderId(message: string): string | null {
 
 function mapAfterSalesRule(message: string): string {
   if (/过期|临期|3个月/.test(message)) return 'near_expiry';
-  if (/坏了|美容仪/.test(message)) return 'quality_issue_device';
-  if (/质保/.test(message)) return 'warranty_scope';
+  if (/坏了|质保|美容仪/.test(message)) return 'quality_issue_device';
   if (/破了|撒了|破损/.test(message)) return 'damaged_in_transit';
   if (/无理由|不想要/.test(message)) return 'no_reason_return_crossborder';
   return 'warranty_scope';
@@ -35,20 +34,8 @@ export async function handleChat(message: string): Promise<AgentResponse> {
     usedTools.push('queryOrder');
   }
 
-  if (intent === 'customs_query' && orderId) {
-    context.customs = queryCustoms(orderId);
-    usedTools.push('queryCustoms');
-    if (/保税仓|下单\d+天|多久/.test(message)) {
-      context.order = queryOrder(orderId);
-      usedTools.push('queryOrder');
-    }
-  }
-
-  if (intent === 'logistics_query' && orderId) {
-    context.logistics = queryLogistics(orderId);
-    usedTools.push('queryLogistics');
-
-    if (/税|被税|清关/.test(message)) {
+  if (intent === 'customs_query') {
+    if (orderId) {
       context.customs = queryCustoms(orderId);
       usedTools.push('queryCustoms');
       context.order = queryOrder(orderId);
@@ -56,9 +43,22 @@ export async function handleChat(message: string): Promise<AgentResponse> {
     }
   }
 
-  if (intent === 'address_change' && orderId) {
-    context.order = queryOrder(orderId);
-    usedTools.push('queryOrder');
+  if (intent === 'logistics_query') {
+    if (orderId) {
+      context.logistics = queryLogistics(orderId);
+      usedTools.push('queryLogistics');
+      context.customs = queryCustoms(orderId);
+      usedTools.push('queryCustoms');
+      context.order = queryOrder(orderId);
+      usedTools.push('queryOrder');
+    }
+  }
+
+  if (intent === 'address_change') {
+    if (orderId) {
+      context.order = queryOrder(orderId);
+      usedTools.push('queryOrder');
+    }
   }
 
   if (intent === 'aftersales') {
@@ -69,19 +69,16 @@ export async function handleChat(message: string): Promise<AgentResponse> {
   if (intent === 'product_qa') {
     context.kb = queryKnowledgeBase(message);
     usedTools.push('queryKnowledgeBase');
-
-    if (/雅萌|安热沙|假货|版本/.test(message)) {
-      context.products = queryProductCatalog({});
-      usedTools.push('queryProductCatalog');
-    }
+    context.products = queryProductCatalog({ keyword: /雅萌|安热沙|swisse/i.test(message) ? '' : undefined });
+    usedTools.push('queryProductCatalog');
   }
 
   if (intent === 'recommendation') {
-    if (/防晒|敏感肌/.test(message)) {
+    if (/防晒/.test(message) || /敏感肌/.test(message)) {
       context.products = queryProductCatalog({ category: 'sunscreen', suitableFor: '敏感肌' });
     } else if (/精华|抗初老/.test(message)) {
       context.products = queryProductCatalog({ category: 'serum', maxPrice: 500 });
-    } else if (/宝宝|儿童|无泪|5岁/.test(message)) {
+    } else if (/宝宝|儿童|无泪/.test(message)) {
       context.products = queryProductCatalog({ category: 'bodywash', suitableFor: '儿童' });
     } else {
       context.products = queryProductCatalog({ category: 'shampoo', suitableFor: '油性头皮' });
