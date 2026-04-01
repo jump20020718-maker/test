@@ -1,0 +1,23 @@
+[
+  {
+    "orderId": "ORD1001",
+    "status": "pending_clearance",
+    "reason": "身份证信息待核验",
+    "requiredDocs": ["收件人身份证信息"],
+    "taxHint": "保税仓订单通常含综合税，按申报规则执行"
+  },
+  {
+    "orderId": "ORD1002",
+    "status": "held",
+    "reason": "海关抽检待补充资料",
+    "requiredDocs": ["身份证正反面", "订单支付凭证"],
+    "taxHint": "若产生税费以海关通知为准"
+  },
+  {
+    "orderId": "ORD1003",
+    "status": "cleared",
+    "reason": "已完成放行",
+    "requiredDocs": [],
+    "taxHint": "直邮可能产生税费，具体以当地海关为准"
+  }
+]

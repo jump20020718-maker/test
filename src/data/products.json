@@ -1,0 +1,84 @@
+[
+  {
+    "id": "p-ya-man-ace5-overseas",
+    "name": "雅萌 ACE 五代美容仪 海外版",
+    "category": "beauty_device",
+    "price": 2899,
+    "features": ["EMS模式", "射频模式", "英文说明书"],
+    "suitableFor": ["成人", "日常紧致护理"],
+    "cautions": ["敏感肌低档位试用", "非医疗器械，不用于疾病治疗"],
+    "certifications": ["以实际出货批次资料为准"]
+  },
+  {
+    "id": "p-ya-man-ace5-cn",
+    "name": "雅萌 ACE 五代美容仪 国行版",
+    "category": "beauty_device",
+    "price": 3299,
+    "features": ["中文说明书", "本地售后通道"],
+    "suitableFor": ["成人"],
+    "cautions": ["非医疗器械，不作疗效承诺"],
+    "certifications": ["以品牌官方公示为准"]
+  },
+  {
+    "id": "p-anessa-gold",
+    "name": "安热沙小金瓶防晒",
+    "category": "sunscreen",
+    "price": 189,
+    "features": ["高倍防晒", "成膜快", "通勤户外可用"],
+    "suitableFor": ["普通肌", "混合肌"],
+    "cautions": ["孕妇属于特殊人群，建议先咨询医生", "敏感肌建议先试用"]
+  },
+  {
+    "id": "p-swisse-liver",
+    "name": "Swisse 护肝片",
+    "category": "supplement",
+    "price": 159,
+    "features": ["膳食补充剂", "日常营养补充"],
+    "suitableFor": ["成人"],
+    "cautions": ["不能替代药物", "不用于疾病治疗"]
+  },
+  {
+    "id": "p-gentle-sunscreen-a",
+    "name": "温和防晒A",
+    "category": "sunscreen",
+    "price": 238,
+    "features": ["温和配方", "无酒精配方"],
+    "suitableFor": ["敏感肌", "换季泛红人群"],
+    "cautions": ["建议先做皮试"]
+  },
+  {
+    "id": "p-antiaging-serum-b",
+    "name": "抗初老精华B",
+    "category": "serum",
+    "price": 459,
+    "features": ["夜间修护", "抗氧化思路"],
+    "suitableFor": ["30岁+", "熬夜人群"]
+  },
+  {
+    "id": "p-kids-bodywash-c",
+    "name": "儿童沐浴露C",
+    "category": "bodywash",
+    "price": 129,
+    "features": ["无泪配方", "低刺激"],
+    "suitableFor": ["儿童", "5岁+"],
+    "cautions": ["避免入眼", "首次使用建议少量测试"]
+  },
+  {
+    "id": "p-oily-scalp-shampoo-d",
+    "name": "控油洗发水D",
+    "category": "shampoo",
+    "price": 176,
+    "features": ["控油", "头皮清洁"],
+    "suitableFor": ["男生", "油性头皮", "有头屑困扰人群"],
+    "cautions": ["非药物，不替代皮肤科治疗"]
+  },
+  {
+    "id": "p-laifen-dryer-cn",
+    "name": "徕芬高速吹风机（国产）",
+    "category": "hair_dryer",
+    "price": 799,
+    "features": ["高速马达", "轻量化", "温控"],
+    "suitableFor": ["家用", "外贸渠道"],
+    "certifications": ["认证状态以实际型号/目标市场测试报告为准"]
+  }
+]
