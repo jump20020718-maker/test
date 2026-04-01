@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ORD1001",
+    "channel": "bonded",
+    "status": "paid_waiting_customs",
+    "canChangeAddress": false,
+    "createdAt": "2026-03-28"
+  },
+  {
+    "id": "ORD1002",
+    "channel": "bonded",
+    "status": "shipped",
+    "canChangeAddress": false,
+    "createdAt": "2026-03-20"
+  },
+  {
+    "id": "ORD1003",
+    "channel": "direct_mail",
+    "status": "in_transit",
+    "canChangeAddress": true,
+    "createdAt": "2026-03-25"
+  },
+  {
+    "id": "ORD1004",
+    "channel": "bonded",
+    "status": "delivered",
+    "canChangeAddress": false,
+    "createdAt": "2026-03-15"
+  }
+]

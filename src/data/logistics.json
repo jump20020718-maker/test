@@ -1,0 +1,32 @@
+[
+  {
+    "orderId": "ORD1001",
+    "carrier": "顺丰跨境",
+    "canDeliverRural": true,
+    "etaDays": "5-8",
+    "tracking": [
+      { "time": "2026-03-29 10:00", "node": "订单已推送清关" },
+      { "time": "2026-03-30 14:00", "node": "清关处理中" }
+    ]
+  },
+  {
+    "orderId": "ORD1002",
+    "carrier": "中通国际",
+    "canDeliverRural": true,
+    "etaDays": "4-7",
+    "tracking": [
+      { "time": "2026-03-21 09:10", "node": "包裹已出库" },
+      { "time": "2026-03-22 18:40", "node": "干线运输中" }
+    ]
+  },
+  {
+    "orderId": "ORD1003",
+    "carrier": "日本邮政转国内快递",
+    "canDeliverRural": false,
+    "etaDays": "7-12",
+    "tracking": [
+      { "time": "2026-03-26 11:20", "node": "海外仓发出" },
+      { "time": "2026-03-28 16:00", "node": "航班运输中" }
+    ]
+  }
+]
